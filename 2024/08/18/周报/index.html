@@ -16,19 +16,19 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Jiahao Xiao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="周报｜｜日期：2024.7.6-7.132024年7月6日 - 2024年7月13日  #### 本周工作内容： 1. **完成的任务**  2. **正在进行的任务**  3. **待办事项**  #### 学到的新的小知识或技能：   #### 问题和困难：   #### 个人的感想和反思：### ｜｜日期：2024.7.27-8.2  2024年7月27日 - 2024年8月2日 本周工作内">
+    <meta name="description" content="周报｜｜日期：2024.8.19-8.232024年8月19日 - 2024年8月23日 本周工作内容： 完成的任务   修改模型的输出层   细节  两种方法耶：直接把4096（hidden_size)变为1；或者先把4096变为32000（也就是这里不动），然后在新加一个32000到1的线性层。我是使用了直接把4096（hidden_size)变为1的方法。但不知道且好奇这两种方法的效果哪种好">
 <meta property="og:type" content="article">
 <meta property="og:title" content="周报">
 <meta property="og:url" content="http://example.com/2024/08/18/%E5%91%A8%E6%8A%A5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="周报｜｜日期：2024.7.6-7.132024年7月6日 - 2024年7月13日  #### 本周工作内容： 1. **完成的任务**  2. **正在进行的任务**  3. **待办事项**  #### 学到的新的小知识或技能：   #### 问题和困难：   #### 个人的感想和反思：### ｜｜日期：2024.7.27-8.2  2024年7月27日 - 2024年8月2日 本周工作内">
+<meta property="og:description" content="周报｜｜日期：2024.8.19-8.232024年8月19日 - 2024年8月23日 本周工作内容： 完成的任务   修改模型的输出层   细节  两种方法耶：直接把4096（hidden_size)变为1；或者先把4096变为32000（也就是这里不动），然后在新加一个32000到1的线性层。我是使用了直接把4096（hidden_size)变为1的方法。但不知道且好奇这两种方法的效果哪种好">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-18T08:13:52.000Z">
-<meta property="article:modified_time" content="2024-08-18T08:14:19.293Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2024-08-23T04:20:29.175Z">
+<meta property="article:author" content="Jiahao Xiao">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -208,13 +208,6 @@
   <div class="mt-3">
     
     
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-18 16:13" pubdate>
-          2024年8月18日 下午
-        </time>
-      </span>
-    
   </div>
 
   <div class="mt-1">
@@ -222,7 +215,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          2.1k 字
         
       </span>
     
@@ -233,7 +226,7 @@
         
         
         
-          50 分钟
+          18 分钟
         
       </span>
     
@@ -275,25 +268,68 @@
             
               <div class="markdown-body">
                 
-                <h1 id="周报"><a href="#周报" class="headerlink" title="周报"></a>周报</h1><h3 id="｜｜日期：2024-7-6-7-13"><a href="#｜｜日期：2024-7-6-7-13" class="headerlink" title="｜｜日期：2024.7.6-7.13"></a>｜｜日期：2024.7.6-7.13</h3><pre><code class="hljs">2024年7月6日 - 2024年7月13日
-
-#### 本周工作内容：
-1. **完成的任务**
-
-2. **正在进行的任务**
-
-3. **待办事项**
-
-#### 学到的新的小知识或技能：
-
-
-#### 问题和困难：
-
-
-#### 个人的感想和反思：### ｜｜日期：2024.7.27-8.2
-</code></pre>
-<p>2024年7月27日 - 2024年8月2日</p>
+                <h1 id="周报"><a href="#周报" class="headerlink" title="周报"></a>周报</h1><h3 id="｜｜日期：2024-8-19-8-23"><a href="#｜｜日期：2024-8-19-8-23" class="headerlink" title="｜｜日期：2024.8.19-8.23"></a>｜｜日期：2024.8.19-8.23</h3><p>2024年8月19日 - 2024年8月23日</p>
 <h4 id="本周工作内容："><a href="#本周工作内容：" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
+<li><strong>完成的任务</strong></li>
+</ol>
+<ul>
+<li>修改模型的输出层<details>
+  <summary>细节</summary>
+ 两种方法耶：直接把4096（hidden_size)变为1；或者先把4096变为32000（也就是这里不动），然后在新加一个32000到1的线性层。我是使用了直接把4096（hidden_size)变为1的方法。但不知道且好奇这两种方法的效果哪种好？
+  
+<ul>
+<li>generation模块的输出层修改；forward模块输出层修改</li>
+<li>修改了绑定的函数，解绑了输出和输入层</li>
+<li>调试修改模型的加载权重的逻辑，使得不加载旧的输出全连接层的权重，把新的权重按照 nn.init.normal_(module.weight, mean&#x3D;0.0, std&#x3D;0.02)逻辑初始化。</li>
+</ul>
+</li>
+</ul>
+</details>
+
+<ul>
+<li>学习别的5组的实现方法<details>
+  <summary>细节</summary
+  -  TVQA-C
+      - - 使用了HVS-5M来提取视频特征（运动特征，空间特征）；结合利用Q-Align，加强了帧图像的语意特征；特征融合后全联接层到输出。
+      - - 训练的loss就是 PLCC loss and SROCC loss和KROCC loss，采用的是组策略。
+  -   SJTU-MultimediaLab
+      - - 用slowfast、swim-transformer-B、LIQE（与语意信息失真类型相关的特征）、Q-Align、fast-VQA（局部感知特征）、D3D（视频压缩信息特征；融合所有特征后，用了GELU的全联接层
+  -  FudanVIP
+      - - clip分别CNN、swim-transform特征融合，得到包括自己独立在内点三个分数，然后相加
+      - - 看Fudan-VIP的启示：我自己的只有基于语义特征的分支耶
+  -  Test IQA
+      - 用 Discrete Cosine Transform (DCT) and Wavelet提取非学习的特征，然后就可以有各种侧重点的指标：VSI、sm-ssim之类的，然后就用一个模型来学习融合这些各种指标角度生成分数
+  - VPT
+      -用Q-Align，一个是输入切割的图片（关注局部特征），一个输入放缩的图片（关注全局特征）；然后评分5级和8级，两者再加权平均。</li>
+</ul>
+</details>
+
+<ol start="2">
+<li><strong>正在进行的任务</strong></li>
+</ol>
+<ul>
+<li>修改训练的时候的target加载逻辑，需要去除他原本的tokenize的过程，采取浮点数的形式。</li>
+<li>训练输出格式是浮点数的模型</li>
+</ul>
+<ol start="3">
+<li><strong>待办事项</strong></li>
+</ol>
+<ul>
+<li>测评输出格式是浮点数的模型的效果</li>
+<li>修改输入：多图片输入（依次并行都经过视觉编码器变为了语言层之后在整合）</li>
+<li>修改输入：多图片输入（先把多张图像（相当于3维了）整合为2维然后在输入到视觉编码器）</li>
+</ul>
+<h4 id="学到的新的小知识或技能："><a href="#学到的新的小知识或技能：" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
+<li>vscode调试功能的熟练使用来debug和跟踪数据流。</li>
+<li>粗略了解到了很多新的工具：HVS-5M、Q-Align、slowfast方法、GELU</li>
+<li>看了别的组的画的图（作图可以标注“参数锁没锁”之列的啊），给方法取名字啊</li>
+</ul>
+<h4 id="问题和困难："><a href="#问题和困难：" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
+<li>感觉自己的习惯不是很好，东改西改，都不知道自己最后改动了哪些地方了。</li>
+</ul>
+<h4 id="个人的感想和反思："><a href="#个人的感想和反思：" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>看了别人的方法，发现就是积累？把了解到的可以抽取特征的模型都堆砌在一起就好了？；（比如GELU，可以看到线性层就加个这个进去；还有就是Q-Align，也是只要是有语言语意特征的也就直接加进去就好了。？）</p>
+<h3 id="｜｜日期：2024-7-27-8-2"><a href="#｜｜日期：2024-7-27-8-2" class="headerlink" title="｜｜日期：2024.7.27-8.2"></a>｜｜日期：2024.7.27-8.2</h3><p>2024年7月27日 - 2024年8月2日</p>
+<h4 id="本周工作内容：-1"><a href="#本周工作内容：-1" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
 <li><strong>完成的任务</strong></li>
 </ol>
 <ul>
@@ -335,17 +371,17 @@
 </ul>
 </li>
 </ul>
-<h4 id="学到的新的小知识或技能："><a href="#学到的新的小知识或技能：" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
+<h4 id="学到的新的小知识或技能：-1"><a href="#学到的新的小知识或技能：-1" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
 <li>利用drawio画论文里的图</li>
 <li>LaTex的使用</li>
 <li>“Mega有20G的免费云盘空间”</li>
 </ul>
-<h4 id="问题和困难："><a href="#问题和困难：" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
+<h4 id="问题和困难：-1"><a href="#问题和困难：-1" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
 <li>提问：要怎么很方便的第一时间关注到前沿新出的知识、工具、论文之类的啊。我获取这些信息的地方都很散乱（我目前还是抖音、b站、chatgpt、总结性的论文或者是我搜索一篇论文的时候它有推荐另一篇才知道）；；；；；（是可以订阅啥学术期刊、博客和新闻网站，学术资源平台，或聚合工具，课程与会议或是啥邮件订阅与新闻通讯之类的可以很系统的全面的获取信息的吗？？？？）</li>
 </ul>
-<h4 id="个人的感想和反思："><a href="#个人的感想和反思：" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>发现自己学习新工具的速度还是很快的（LaTex，drawio之类的）；<br>这个星期，花了一部分时间在托福学习上，在这个上面化的时间稍稍减少。</p>
+<h4 id="个人的感想和反思：-1"><a href="#个人的感想和反思：-1" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>发现自己学习新工具的速度还是很快的（LaTex，drawio之类的）；<br>这个星期，花了一部分时间在托福学习上，在这个上面化的时间稍稍减少。</p>
 <h3 id="｜｜日期：2024-7-20-7-26"><a href="#｜｜日期：2024-7-20-7-26" class="headerlink" title="｜｜日期：2024.7.20-7.26"></a>｜｜日期：2024.7.20-7.26</h3><p>2024年7月20日 - 2024年7月26日</p>
-<h4 id="本周工作内容：-1"><a href="#本周工作内容：-1" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
+<h4 id="本周工作内容：-2"><a href="#本周工作内容：-2" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
 <li><strong>完成事项</strong></li>
 </ol>
 <ul>
@@ -363,14 +399,14 @@
 <li>等它的 final test data release（但是到26号了咋还没有开放，29就好不就是最后的截止了吗，这个这个比赛的时间莫名其妙的）</li>
 <li>我下一步的任务是啥，我要干啥？？是去修改模型架构吗（三个方向：输出浮点数；输入多张图像（三维处理为二维输入给llava）；多张图像输入给llava的视觉处理层，输出多个向量后，在多个向量叠加）（因为我发现我自己的相关系数评分测试和官网的评分服务器给的分很像，所以我可以去验证有效性）</li>
 </ul>
-<h4 id="问题和困难：-1"><a href="#问题和困难：-1" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
+<h4 id="问题和困难：-2"><a href="#问题和困难：-2" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
 <li>主要是它的测试服务器从上周5晚上就坏了，然后一直到周2早上才好</li>
 <li>还有就是没有预料到的改用pytorch-msssim为啥分数反而下降。</li>
 <li>还有就是它的final test data咋还没有release啊</li>
 </ul>
-<h4 id="个人的感想和反思：-1"><a href="#个人的感想和反思：-1" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>主要的感觉是认为自己还不够细致；现在回想起来，踩了很多坑，比如我修改了我的权重文件的名字把里面的lora去掉了，然后就出了一些问题等等。而且，现在回想起来，应该先想清楚，然后在开始做（就比如之前的我一直都用的ssim，没有扣清楚原baseline到底是咋实现的，导致到现在了还没有实现；可能还有点擅自主张的就用了yuv444p等等之类的）。但回想起来，我也学习到了很多很多，一个月前还在用mac自带的终端跑大模型呢，现在我感觉自己已经可以很熟练的操作修改以及了解llava了。</p>
+<h4 id="个人的感想和反思：-2"><a href="#个人的感想和反思：-2" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>主要的感觉是认为自己还不够细致；现在回想起来，踩了很多坑，比如我修改了我的权重文件的名字把里面的lora去掉了，然后就出了一些问题等等。而且，现在回想起来，应该先想清楚，然后在开始做（就比如之前的我一直都用的ssim，没有扣清楚原baseline到底是咋实现的，导致到现在了还没有实现；可能还有点擅自主张的就用了yuv444p等等之类的）。但回想起来，我也学习到了很多很多，一个月前还在用mac自带的终端跑大模型呢，现在我感觉自己已经可以很熟练的操作修改以及了解llava了。</p>
 <h3 id="｜｜日期：2024-7-13-7-19"><a href="#｜｜日期：2024-7-13-7-19" class="headerlink" title="｜｜日期：2024.7.13-7.19"></a>｜｜日期：2024.7.13-7.19</h3><p>2024年7月13日 - 2024年7月19日</p>
-<h4 id="本周工作内容：-2"><a href="#本周工作内容：-2" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
+<h4 id="本周工作内容：-3"><a href="#本周工作内容：-3" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
 <li><p><strong>目前成绩</strong><br>目标是把分数提高得越高越好。NR的效果(极大程度上）几乎就取决我的训练数据集。天花板就是我的“训练数据集伪标签方法的分数”（理想状态假设我的模型可以达到我的loss为0）。目前表现的最好的模型（10frame的忽视第一帧的黑白ms-ssim之后gt微调过的mp4转png的伪标签训练的模型）成绩为0.19527。天花板（mp4转png的ms-ssim全色彩方法，全frame取平均）的分数为0.30。</p>
 </li>
 <li><p><strong>核心问题</strong><br>问题瓶颈在天花板高度。提升方法：<br> 1.我需要更高的天花板方法。<br> 2.我需要我的模型去逼近天花板。</p>
@@ -402,9 +438,9 @@
 <li><p>应为以上提到的模型都是输出为0-10.然后我尝试用llava-v1.5-7b-finally-merged作为基础模型，之际诶在彩色原始msssim分数（范围是0-1）上训练。但是在训练完后，他的输出还是0-10的（就有稍微的分值变化）。我在想要怎么搞才能让我的模型直接学习到彩色原始msssim分数？是不是要重来（或者用llava-v1.5-7b-qinstruct-myown-after作为基础模型）？还是只是我的训练时间不够？？（但是我看它的loss也收敛了呀已经）</p>
 </li>
 </ul>
-<h4 id="个人的感想和反思：-2"><a href="#个人的感想和反思：-2" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>时间安排的很好，机器利用效率很高，几乎让它一直处于运作状态。<br>成绩提升很快，但仍有上升空间。但遇到瓶颈了。</p>
+<h4 id="个人的感想和反思：-3"><a href="#个人的感想和反思：-3" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>时间安排的很好，机器利用效率很高，几乎让它一直处于运作状态。<br>成绩提升很快，但仍有上升空间。但遇到瓶颈了。</p>
 <h3 id="｜｜日期：2024-7-6-7-12"><a href="#｜｜日期：2024-7-6-7-12" class="headerlink" title="｜｜日期：2024.7.6-7.12"></a>｜｜日期：2024.7.6-7.12</h3><p>2024年7月6日 - 2024年7月12日</p>
-<h4 id="本周工作内容：-3"><a href="#本周工作内容：-3" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
+<h4 id="本周工作内容：-4"><a href="#本周工作内容：-4" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
 <li><strong>完成的任务</strong></li>
 </ol>
 <ul>
@@ -462,7 +498,7 @@
 <ol start="3">
 <li><strong>待办事项</strong></li>
 </ol>
-<h4 id="学到的新的小知识或技能：-1"><a href="#学到的新的小知识或技能：-1" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
+<h4 id="学到的新的小知识或技能：-2"><a href="#学到的新的小知识或技能：-2" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
 <li>优化步骤拆解一下，从数据，模型训练，到测试方法</li>
 <li><ul>
 <li>数据：数据增广(伪标签)，加噪增强（训练图片加噪，加高斯噪声椒盐噪声什么的），怎么从视频里边抽取更多的有效帧，怎么合到模型里边。效果提升最快的永远是加数据（第二是一个视频是300帧，你现在只用1帧，肯定用的更多效果会更好）；多实例学习，采样10帧，拼成一个输入一起送给模型，让模型自己去学（在模型最开始加一个类似三维卷积的层，把输入再变成2维的）</li>
@@ -470,12 +506,12 @@
 </li>
 <li>llama模型的结构。包括各种小知识的学习：tokens、embedding、transformer层，forward、backward层，输出层原理（hidden states经过全连接层，到logits三维tensor（到字典层），二维化后可以算loss）</li>
 </ul>
-<h4 id="问题和困难：-2"><a href="#问题和困难：-2" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
+<h4 id="问题和困难：-3"><a href="#问题和困难：-3" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
 <li>调试改输出层和loss，不明原因，一直报错，疯了。#解决方案：找学长帮我看看</li>
 </ul>
-<h4 id="个人的感想和反思：-3"><a href="#个人的感想和反思：-3" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>之前的任务可能就写写脚本，改改数据集，模仿别人的微调方法自己微调，感觉还算容易。但当涉及到了真正的去改模型的结构之类的，可以明显的感觉到难度变高了。在求助学长学姐的同时，也发现自己需要去学的关于模型结构以及实现知识还有很多（很多时候都听不懂他们在讲啥😭）。但急不得，也不用去给自己很多压力，已经尽力了就好。还是需要更细致的去理解每一个东西才行，而且需要去补基础知识。</p>
+<h4 id="个人的感想和反思：-4"><a href="#个人的感想和反思：-4" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>之前的任务可能就写写脚本，改改数据集，模仿别人的微调方法自己微调，感觉还算容易。但当涉及到了真正的去改模型的结构之类的，可以明显的感觉到难度变高了。在求助学长学姐的同时，也发现自己需要去学的关于模型结构以及实现知识还有很多（很多时候都听不懂他们在讲啥😭）。但急不得，也不用去给自己很多压力，已经尽力了就好。还是需要更细致的去理解每一个东西才行，而且需要去补基础知识。</p>
 <h3 id="｜｜日期：2024-6-29-7-5"><a href="#｜｜日期：2024-6-29-7-5" class="headerlink" title="｜｜日期：2024.6.29-7.5"></a>｜｜日期：2024.6.29-7.5</h3><p>2024年6月29日 - 2024年7月5日</p>
-<h4 id="本周工作内容：-4"><a href="#本周工作内容：-4" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
+<h4 id="本周工作内容：-5"><a href="#本周工作内容：-5" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
 <li><strong>完成的任务</strong></li>
 </ol>
 <ul>
@@ -518,7 +554,7 @@
 <li>用比赛提供的benchmark测评最终模型效果</li>
 <li>想一下可以咋优化我的提示（一方面给出更详细的指导，另一方面说不定可以利用链式思维）</li>
 </ul>
-<h4 id="学到的新的小知识或技能：-2"><a href="#学到的新的小知识或技能：-2" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
+<h4 id="学到的新的小知识或技能：-3"><a href="#学到的新的小知识或技能：-3" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
 <li>详细认识了Q-instruct数据集，以及如何用它微调llava</li>
 <li>NR-IQA 模型严重依赖训练数据，在面对更广泛的图像和失真时，这通常表现出弱泛化。（A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment）</li>
 <li>NR-IQA的评分可能会出现不准确性和上下文依赖性（A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment）</li>
@@ -527,7 +563,7 @@
 <li>利用python来进行数据的处理，标签的处理，字典列表的生成。</li>
 <li>可以利用chatgpt-4o进行把原始数据集转化为指令微调数据集</li>
 </ul>
-<h4 id="问题和困难：-3"><a href="#问题和困难：-3" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
+<h4 id="问题和困难：-4"><a href="#问题和困难：-4" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
 <li><p><del>视频质量评分的subjective_score分值范围是什么，评估角度和标准是什么。</del></p>
  <details> 
  - - 根据其个人感知和经验，给视频质量打分。通常分数从1到5或1到10不等，其中较高分数表示更好的质量。
@@ -543,9 +579,9 @@
 
  </details></li>
 </ul>
-<h4 id="个人的感想和反思：-4"><a href="#个人的感想和反思：-4" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>总体感觉进行的很顺利，时间安排也蛮好的，继续加油吧。</p>
+<h4 id="个人的感想和反思：-5"><a href="#个人的感想和反思：-5" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>总体感觉进行的很顺利，时间安排也蛮好的，继续加油吧。</p>
 <h3 id="｜｜日期：2024-6-24-6-28"><a href="#｜｜日期：2024-6-24-6-28" class="headerlink" title="｜｜日期：2024.6.24-6.28"></a>｜｜日期：2024.6.24-6.28</h3><p>2024年6月24日 - 2024年6月28日</p>
-<h4 id="本周工作内容：-5"><a href="#本周工作内容：-5" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
+<h4 id="本周工作内容：-6"><a href="#本周工作内容：-6" class="headerlink" title="本周工作内容："></a>本周工作内容：</h4><ol>
 <li><p><strong>完成的任务</strong></p>
 <ul>
 <li>匹配了（5个）数据集对应的（14个）基准测试。</li>
@@ -598,7 +634,7 @@
 </ul>
 </li>
 </ol>
-<h4 id="学到的新的小知识或技能：-3"><a href="#学到的新的小知识或技能：-3" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
+<h4 id="学到的新的小知识或技能：-4"><a href="#学到的新的小知识或技能：-4" class="headerlink" title="学到的新的小知识或技能："></a>学到的新的小知识或技能：</h4><ul>
 <li>搞清楚了epoches、batch的作用和效果。</li>
 <li>知道了为啥llava用的是llama而不是gpt-4  <details>
 <summary>细节</summary>
@@ -609,12 +645,12 @@
 <li>9种提示方法(刺激、双刺激、多刺激)*(the standard, in-context, and chain-of-thought prompting)</li>
 <li>一些不同的benchmark怎么去使用。比如：VQAv2、VisWiz、MME、MMBench</li>
 </ul>
-<h4 id="问题和困难：-4"><a href="#问题和困难：-4" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
+<h4 id="问题和困难：-5"><a href="#问题和困难：-5" class="headerlink" title="问题和困难："></a>问题和困难：</h4><ul>
 <li>需要下载的数据集太大了，服务器硬盘不够。&#x2F;&#x2F;解决方案：升级租的硬盘空间的大小</li>
 <li>在MM-vet评估时候，需要GPT-4辅助评估，需要自己写一些脚本先来抽取整理数据。</li>
 <li>在看论文里和VQA比赛要求里的都有很多‘专有名词’和‘一些数学的东西’，都没有接触过，遇到重要的都要一个一个查，虽然都看下来了一遍但是感觉没有完全看懂，要补的知识还有很多很多。&#x2F;&#x2F;解决方案：先宏观，不去纠结每个细节，细节慢慢再补。</li>
 </ul>
-<h4 id="个人的感想和反思：-5"><a href="#个人的感想和反思：-5" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>这个星期，花在学习这个上面的时间减少了一些（因为花了很多时间在朋友的毕业saygoodbye上），但又同时想完成所有任务，导致任务量分配到每天不均匀。前几天轻松，后几天却很累。我需要调整状态，投入更多时间（比赛时间很紧张！），然后更加合理分配时间。</p>
+<h4 id="个人的感想和反思：-6"><a href="#个人的感想和反思：-6" class="headerlink" title="个人的感想和反思："></a>个人的感想和反思：</h4><p>这个星期，花在学习这个上面的时间减少了一些（因为花了很多时间在朋友的毕业saygoodbye上），但又同时想完成所有任务，导致任务量分配到每天不均匀。前几天轻松，后几天却很累。我需要调整状态，投入更多时间（比赛时间很紧张！），然后更加合理分配时间。</p>
 <h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><pre><code class="hljs">### ｜｜日期：2024.7.6-7.13
 2024年7月6日 - 2024年7月13日
 
@@ -657,7 +693,7 @@
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>John Doe</div>
+          <div>Jiahao Xiao</div>
         </div>
       
       
@@ -666,6 +702,11 @@
           <div>2024年8月18日</div>
         </div>
       
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年8月23日</div>
+        </div>
       
       
         <div class="license-meta-item">
