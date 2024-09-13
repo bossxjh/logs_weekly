@@ -235,7 +235,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/logs_weekly/2024/08/18/%E5%91%A8%E6%8A%A5/" target="_self">
         <div>
-          周报｜｜日期：2024.9.2-9.62024年9月2日 - 2024年9月6日 工作内容： 目标 HVS+LLaVA的模型测在KoNViD-1K数据集训练，LIVE-VQC数据集测试上的结果这一栏的结果。训练数据的时候只训练“融合特征模块”和“输出层全联接层”。其他llava模型和hvs模型都用预训练好的模型参数。       图片         进度现在在准备训练数据。因为在KoNViD-1
+          周报｜｜日期：2024.9.9-9.132024年9月9日 - 2024年9月13日 本周工作内容： 进度   得到数据集的HVS_特征 —-&gt;发现lm_head在模型里被tie_weight了，会导致一些错误,尝试解绑未成功。最后保留原来的lm_head,新添加了一个lm_head_out参数作为我的新的输出全联接层。—–&gt;debug训练脚本，成功运行训练(训练里6epoches18
         </div>
       </a>
 
